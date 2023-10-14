@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.10)
+project(floorPlanToMap)
+find_package(OpenCV REQUIRED)
+include_directories(appStateMachine/include)
+add_executable(floorPlanToMap floorPlanToMap.cpp appStateMachine/src/appStateMachine.cpp)
+target_link_libraries(floorPlanToMap ${OpenCV_LIBRARIES})
