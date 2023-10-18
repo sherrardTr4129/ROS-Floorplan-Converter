@@ -1,4 +1,5 @@
 #include "cmdLineArgHandler/include/cmdLineArgHandler.h"
+#include "procMapImage/include/procMapImage.h"
 
 int main(int argc, char **argv) {
   // process command line arguments
@@ -16,7 +17,11 @@ int main(int argc, char **argv) {
 
   // for each provided image, perform processing procedure
   for (auto elem : img_map) {
-    // TODO: process images here.
+    ProcMapImage image_proc(elem.second);
+    mapData_t map_data = image_proc.RunImageProc();
+
+    // TODO: implement function to save map image and metadata
+    // in ROS format
   }
 
   return 0;
